@@ -48,12 +48,12 @@ public class ProductDa {
 		String pcategory_fk = mr.getParameter("pcategory_fk");
 
 		pcategory_fk += mr.getParameter("pcode");
-		// pcategory_fk¿¡´Â Ä«Å×°í¸® ÄÚµå(code)¿Í »óÇ°ÄÚµå(pcode)°¡ ¿¬°áµÇ¼­ µé¾î°£´Ù.
-		// pcategory_fk = mangray
+		// pcategory_fkì—ëŠ” ì¹´í…Œê³ ë¦¬ ì½”ë“œ(code)ì™€ ìƒí’ˆì½”ë“œ(pcode)ê°€ ì—°ê²°ë˜ì„œ ë“¤ì–´ê°„ë‹¤.
+				// pcategory_fk = mangray
 
 		String ppublisher = mr.getParameter("ppublisher");
 		String pimage = mr.getFilesystemName("pimage");
-		// System.out.println(pimage); // Áßº¹µÈ È­ÀÏÀÌ¶ó¸é È­ÀÏÀÌ¸§µÚ¿¡ ¼ıÀÚ°¡ ºÙ¾î¼­ ³ª¿Â´Ù.
+		// System.out.println(pimage); // ï¿½ßºï¿½ï¿½ï¿½ È­ï¿½ï¿½ï¿½Ì¶ï¿½ï¿½ È­ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½Ù¾î¼­ ï¿½ï¿½ï¿½Â´ï¿½.
 		// mr.getParamter("pimage");
 
 		String pqty = mr.getParameter("pqty");
@@ -250,7 +250,7 @@ System.out.println(ppublisher);
 		pstmt = conn.prepareStatement(sql);
 		
 		
-			pstmt.setString(1, code + "%"); //(man%) manÀ¸·Î ½ÃÀÛÇÏ´Â °ÍµéÀ» °¡Á®¿Í¶ó
+			pstmt.setString(1, code + "%"); //(man%) manï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Íµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¶ï¿½
 		
 	
 		
@@ -283,6 +283,8 @@ public  ArrayList<ProductBean>  selectProd(String pname) throws SQLException{
 	pstmt = conn.prepareStatement(sql);
 	pstmt.setString(1, "%"+pname+"%");
 	rs=pstmt.executeQuery();
+	
+	
 	ArrayList<ProductBean> list = this.makeArrayList(rs);
 
 	for(int i=0; i<list.size(); i++){

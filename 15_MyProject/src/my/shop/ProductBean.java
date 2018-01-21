@@ -13,6 +13,9 @@ public class ProductBean {
 	private String pcontents;
 	private int point;
 	private String pinputdate;
+	
+	
+	
 	private int totalPrice;
 	private int salePrice;
 	private int totalPoint;

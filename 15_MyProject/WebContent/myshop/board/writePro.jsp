@@ -12,7 +12,9 @@ request.setCharacterEncoding("UTF-8");
 BoardDao bdao=BoardDao.getIstance();
 
 article.setReg_date(new Timestamp(System.currentTimeMillis()));
+
 article.setIp(request.getRemoteAddr());
+System.out.println("ip : " + article.getIp());
 bdao.insertArticle(article);
 response.sendRedirect("List.jsp");
 %>

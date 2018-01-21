@@ -74,7 +74,7 @@ body{
 					<td colspan=2  align="center">
 						<input	type="submit" value="답글 쓰기"> 
 						<input type="reset"	value="다시 작성"> 
-						<input type="button" value="목록 보기"	OnClick="window.location='list.jsp'">
+						<input type="button" value="목록 보기"	OnClick="window.location='List.jsp'">
 					</td>
 				</tr>
 			</table>			

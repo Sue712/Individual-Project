@@ -224,7 +224,7 @@ bootstrap.css:107
 
   
 <% 
-    int pageSize = 10 ; /* 한 페이지에 10개의 글이 보이게 하겠다. */
+    int pageSize = 5 ; /* 한 페이지에 10개의 글이 보이게 하겠다. */
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
   	String pageNum = request.getParameter("pageNum");
@@ -333,29 +333,31 @@ bootstrap.css:107
      <%}%> <!-- for문 끝 -->
 </table>
 <%}%>
-
+<br>
+<center>
 <%
     if (count > 0) {
         int pageCount = count / pageSize + ( count % pageSize == 0 ? 0 : 1);
 		 
-		int pageBlock=10; 
+		int pageBlock=5; 
       	int startPage = ( (currentPage-1) / pageBlock * pageBlock ) + 1; 
         int endPage = startPage + pageBlock-1;
         if (endPage > pageCount) endPage = pageCount;
         
-        if (startPage > 10) {    %>
-        <a href="list.jsp?pageNum=<%= startPage - 10 %>">[이전]</a>
+        if (startPage > 5) {    %>
+        <a href="List.jsp?pageNum=<%= startPage - 5 %>">[이전]</a>
 <%      }
         for (int i = startPage ; i <= endPage ; i++) {  %>
-      <br>  <a href="list.jsp?pageNum=<%= i %>" ><center>[<%= i %>]</center></a>
+        <a href="List.jsp?pageNum=<%= i %>">[<%= i %>]</a>
 <%
         }
         if (endPage < pageCount) {  %>
-        <a href="list.jsp?pageNum=<%= startPage + 10 %>">[다음]</a>
+        <a href="List.jsp?pageNum=<%= startPage + 5%>">[다음]</a>
 <%
         }
     }
 %>
+</center>
 </body>
 </html>
 

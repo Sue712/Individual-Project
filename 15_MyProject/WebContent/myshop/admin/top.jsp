@@ -37,9 +37,10 @@ h1 {
 	<h1>
 		<font size=6 color="black"> 외국어 도서 사이트</font><br>
 	</h1>
+	
 	<a href="main.jsp"><font size=3 color=green>쇼핑몰 홈</font></a> |
 	<a href="<%=request.getContextPath()%>/main.jsp"><font color=green
-		size=3>메인 홈</font></a> |
+		size=3>메인 홈</font></a>|
 	<a href="<%=request.getContextPath()%>/logout.jsp"><font size=3
 		color=red>로그아웃</font></a>
 	<br>
